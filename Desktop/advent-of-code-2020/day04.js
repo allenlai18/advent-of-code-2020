@@ -1,6 +1,8 @@
 const fs = require("fs");
 
-var values = fs.readFileSync("day04.txt", "utf8").split('\r\n')
+var values = fs.readFileSync("day04.txt", "utf8").split('\r\n');
+values.push('');
+
 const codes = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'];
 
 function parseLines(lines) {
@@ -39,24 +41,24 @@ return false;
 
 
 
-const input = fs.readFileSync('day04.txt', 'utf-8').trim().split('\n\n');
-const checkPassport = () => {
-let validPassport = 0;
-const validFields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'];
-for (let i = 0; i < input.length; i++) {
+// const input = fs.readFileSync('day04.txt', 'utf-8').trim().split('\n\n');
+// const checkPassport = () => {
+// let validPassport = 0;
+// const validFields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'];
+// for (let i = 0; i < input.length; i++) {
 
 
-let obj = {};
-const passport = input[i].split(/\s+/);
-passport.forEach((field) => {
-const info = field.split(':');
-obj[info[0]] = info[1];
-});
-if ('byr' in obj && 'iyr' in obj && 'eyr' in obj && 'hgt' in obj && 'hcl' in obj && 'ecl' in obj && 'pid' in obj) {
-validPassport++;
+// let obj = {};
+// const passport = input[i].split(/\s+/);
+// passport.forEach((field) => {
+// const info = field.split(':');
+// obj[info[0]] = info[1];
+// });
+// if ('byr' in obj && 'iyr' in obj && 'eyr' in obj && 'hgt' in obj && 'hcl' in obj && 'ecl' in obj && 'pid' in obj) {
+// validPassport++;
 
-}
-}
-console.log('The number is valid passports are:', validPassport);
-};
+// }
+// }
+// console.log('The number is valid passports are:', validPassport);
+// };
 
